@@ -6,18 +6,27 @@
   has length of one, return it. When you recieve the arrays that you split, merge them.
   
   BIG-OH CLASSIFICATION OF ALGORITHM:
-  <INSERT YOUR EXECUTION TIME CATEGORIZATION OF MERGESORT HERE>
+  Splitting and resplitting the arrays seems to be O(n). Merging is also O(n). Even with more arrays and more calls, the arrays get
+  smaller. The first split might be O(n) and the next two O(n - x) and O(x), so lets assume that all levels of splitting are O(n)
+  each. Log(n) levels. You merge the same number of times. Log(n) * n + Log(n) * n results in O(nlogn).
+  O(nLogn)
 
   Mean execution times for dataset of size n:
   Batch size: <# of times each dataset size was run>
-  n=1       time: 
-  n=10      time: 
-  n=100     time: 
+  n=1       time: 120327
+  n=10      time: 19188
+  n=100     time: 160263
+  n=1000    time: 408858
+  n=10000   time: 4039767
+  n=100000  time: 26387017
+  n=1000000 time: 237354086
   ...
-  n=<huge>  time: 
+  n=<huge>  time: time(n - 1) * 10 or less
 
   ANALYSIS:
-  <INSERT YOUR RESULTS ANALYSIS HERE>
+  When n increases by a factor of 10, the time it takes to run multplies by
+  a factor less than 10, but sometimes close to 10. It seems to get close to
+  10 every other factor increase (10 to 100, 1000 to 10000, 100000 to 1000000).
   ======================================*/
 
 public class MergeSortTester 
