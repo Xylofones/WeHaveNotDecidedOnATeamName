@@ -2,8 +2,9 @@
   class MergeSortTester
 
   ALGORITHM:
-  <I deleted this bit but this is a reminder to put stuff here>
-
+  If the array does not have length of one, split it into two separate arrays with about-equal amount of items inside. If the array
+  has length of one, return it. When you recieve the arrays that you split, merge them.
+  
   BIG-OH CLASSIFICATION OF ALGORITHM:
   <INSERT YOUR EXECUTION TIME CATEGORIZATION OF MERGESORT HERE>
 
