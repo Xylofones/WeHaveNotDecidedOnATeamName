@@ -41,19 +41,38 @@ public class MergeSortTester
 	retLong = System.nanoTime() - retLong;
 	return retLong;
     }
+
+    public static long meanTime(int n){
+	long avg = 0;
+	for (int x = 0; x < 10; x++){
+	    avg += timeThing(n);
+	}
+	return avg/10;
+    }
+    
     /******************************
      * execution time analysis 
-     * <INSERT YOUR DESCRIPTION HERE OF 
-     *  YOUR APPARATUS FOR GENERATING EXECUTION 
-     *  TIME DATA...>
+     the meanTime method calculates the average time using timeThing over the 
+span of 10 runs. 
      ******************************/
     public static void main( String[] args ) {
-	/*for (int x = 1; x < 20; x += 1) {
-	    System.out.println(stepCalc(x));
-	    }*/
 
-	System.out.println(timeThing(100));
 
+	
+        System.out.println(meanTime(1));
+	System.out.println(meanTime(10));
+	System.out.println(meanTime(100));
+	System.out.println(meanTime(1000));
+	System.out.println(meanTime(10000));
+	System.out.println(meanTime(100000));
+	System.out.println(meanTime(1000000));
+
+	
+	/*
+	for (int x = 1; x < 100; x += 1) {
+	    System.out.println(timeThing(x));
+	    }
+	*/
     }//end main
 
 }//end class
