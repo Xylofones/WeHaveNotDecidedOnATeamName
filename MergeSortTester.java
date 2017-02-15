@@ -2,12 +2,7 @@
   class MergeSortTester
 
   ALGORITHM:
-  The merge method we used, given two arrays with a total of n elements, takes
-  6 + 5n steps. The sort method uses 2 + 2n steps to split an array, and adds
-  one to make sure the array doesn't have only one element, and one to call
-  merge. Add the steps of merge, and that gives you 7n + 10, and plus whatever
-  the next two sort methods return. Unless there's only one element, in which
-  case the method only takes two steps.
+  <I deleted this bit but this is a reminder to put stuff here>
 
   BIG-OH CLASSIFICATION OF ALGORITHM:
   <INSERT YOUR EXECUTION TIME CATEGORIZATION OF MERGESORT HERE>
@@ -35,6 +30,16 @@ public class MergeSortTester
 	}
     }
 
+    public static long timeThing(int n) {
+	int[] arr = new int[n];
+	for (int x = 0; x < n; x += 1) {
+	    arr[x] = n - x;
+	}
+	long retLong = System.nanoTime();
+	MergeSort.sort(arr);
+	retLong = System.nanoTime() - retLong;
+	return retLong;
+    }
     /******************************
      * execution time analysis 
      * <INSERT YOUR DESCRIPTION HERE OF 
@@ -42,9 +47,11 @@ public class MergeSortTester
      *  TIME DATA...>
      ******************************/
     public static void main( String[] args ) {
-	for (int x = 1; x < 20; x += 1) {
+	/*for (int x = 1; x < 20; x += 1) {
 	    System.out.println(stepCalc(x));
-	}
+	    }*/
+
+	System.out.println(timeThing(100));
 
     }//end main
 
