@@ -13,13 +13,13 @@
 
   Mean execution times for dataset of size n:
   Batch size: <# of times each dataset size was run>
-  n=1       time: 120327
-  n=10      time: 19188
-  n=100     time: 160263
-  n=1000    time: 408858
-  n=10000   time: 4039767
-  n=100000  time: 26387017
-  n=1000000 time: 237354086
+  n=1       time: 171
+  n=10      time: 12272
+  n=100     time: 119353
+  n=1000    time: 454790
+  n=10000   time: 277360
+  n=100000  time: 13710177
+  n=1000000 time: 122245233
   ...
   n=<huge>  time: time(n - 1) * 10 or less
 
@@ -27,6 +27,8 @@
   When n increases by a factor of 10, the time it takes to run multplies by
   a factor less than 10, but sometimes close to 10. It seems to get close to
   10 every other factor increase (10 to 100, 1000 to 10000, 100000 to 1000000).
+  
+  Fix this I am terrible at data analysis.
   ======================================*/
 
 public class MergeSortTester 
@@ -53,8 +55,12 @@ public class MergeSortTester
 
     public static long meanTime(int n){
 	long avg = 0;
+	//long a = 0;
 	for (int x = 0; x < 10; x++){
 	    avg += timeThing(n);
+	    /*a = timeThing(n);
+	    System.out.println("raw: " + a);
+	    avg += a;*/
 	}
 	return avg/10;
     }
@@ -67,7 +73,7 @@ span of 10 runs.
     public static void main( String[] args ) {
 
 
-	
+	timeThing(1);
         System.out.println(meanTime(1));
 	System.out.println(meanTime(10));
 	System.out.println(meanTime(100));
